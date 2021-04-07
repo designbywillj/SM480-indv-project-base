@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 100%;
+  color: $color--gray-80;
+}
+
+@function font($font-size, $font-weight, $line-height) {
+  @return #{$font-weight + " " + $font-size + "/" + $line-height + ' "Inter"'};
+}
+
+$text--heading-1: font("3rem", "700", "1.15");
+$text--heading-2: font("2.25rem", "700", "1.15");
+$text--heading-3: font("1.5rem", "700", "1.15");
+$text--heading-4: font("1rem", "700", "1.5");
+$text--body: font("1rem", "400", "1.5");
+$text--caption: font("0.875rem", "400", "1.5");
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font: $text--heading-1;
+}
+
+h2 {
+  font: $text--heading-2;
+}
+
+h3 {
+  font: $text--heading-3;
+}
+
+h4 {
+  font: $text--heading-4;
+}
+
+p {
+  font: $text--body;
+}

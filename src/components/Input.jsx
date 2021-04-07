@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./Input.scss";
 import PropTypes from "prop-types";
+import classnames from "classnames";
+import "./Input.scss";
 import Icon from "./Icon";
+
 function Input(props) {
   const { inputValue, setInputValue } = useState("");
   useEffect(
@@ -10,11 +12,11 @@ function Input(props) {
         props.onUpdate(e.target.value);
       }
     },
-    [inputValue, props],
+    [inputValue, props]
   );
 
   return (
-    <div className='input'>
+    <div className={classnames("input", props.className)}>
       {!!props.label && (
         <label htmlFor={props.id} className='input__label'>
           {props.label}
